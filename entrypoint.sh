@@ -13,7 +13,7 @@ else
     rm /usr/bin/kubectl
     curl -sL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/"$KUBECTL_VERSION"/bin/linux/amd64/kubectl && \
         chmod +x /usr/bin/kubectl
-    echo "Using kubectl version: $(kubectl version --client --short)"
+    echo "Using kubectl version: $(kubectl version --client )"
 fi
 
 if [ -z ${IAM_VERSION+x} ] ; then
@@ -25,10 +25,6 @@ else
     chmod +x /usr/bin/aws-iam-authenticator
     echo "Using aws-iam-authenticator version: $(aws-iam-authenticator version)"
 fi
-
-if [ -z "$RUN_COMMAND" ] ; then
-    sh -c "kubectl $*"
-else
-    sh -c "kubectl $RUN_COMMAND"        
-fi
+sh -c "kubectl cluster-info"
+sh -c "kubectl $*"
 
