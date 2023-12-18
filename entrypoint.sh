@@ -25,6 +25,7 @@ else
     chmod +x /usr/bin/aws-iam-authenticator
     echo "Using aws-iam-authenticator version: $(aws-iam-authenticator version)"
 fi
+sh -c "cat /tmp/config"
 sh -c "kubectl cluster-info"
 sh -c "kubectl $*"
 
