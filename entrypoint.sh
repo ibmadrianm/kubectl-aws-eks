@@ -4,7 +4,6 @@ set -e
 
 # Extract the base64 encoded config data and write this to the KUBECONFIG
 echo "STARTING"
-echo "$KUBE_CONFIG_DATA"
 echo "$KUBE_CONFIG_DATA" | base64 -d > /tmp/config
 export KUBECONFIG=/tmp/config
 
@@ -27,10 +26,8 @@ else
     chmod +x /usr/bin/aws-iam-authenticator
     echo "Using aws-iam-authenticator version: $(aws-iam-authenticator version)"
 fi
-echo $KUBECONFIG
-echo "test" > /tmp/config
 #sh -c "kubectl version"
-echo "view content of kubectl config"
+#echo "view content of kubectl config"
 sh -c "cat /tmp/config"
 #sh -c "kubectl cluster-info"
 #sh -c "kubectl $*"
