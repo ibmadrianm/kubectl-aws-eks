@@ -29,5 +29,6 @@ fi
 #sh -c "kubectl version"
 #echo "view content of kubectl config"
 #sh -c "kubectl cluster-info"
+sh -c "ls -altrh /github/home/"
 sh -c "kubectl $*"
 
