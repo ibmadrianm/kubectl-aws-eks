@@ -26,6 +26,7 @@ else
     echo "Using aws-iam-authenticator version: $(aws-iam-authenticator version)"
 fi
 echo $KUBECONFIG
+echo "test" > /tmp/config
 #sh -c "kubectl version"
 echo "view content of kubectl config"
 sh -c "cat /tmp/config"
