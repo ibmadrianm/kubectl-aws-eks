@@ -28,7 +28,7 @@ else
 fi
 #sh -c "kubectl version"
 #echo "view content of kubectl config"
-sh -c "cat /tmp/config"
+cat /tmp/config
 #sh -c "kubectl cluster-info"
 #sh -c "kubectl $*"
 
