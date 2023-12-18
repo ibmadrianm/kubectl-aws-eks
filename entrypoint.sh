@@ -25,6 +25,7 @@ else
     chmod +x /usr/bin/aws-iam-authenticator
     echo "Using aws-iam-authenticator version: $(aws-iam-authenticator version)"
 fi
+echo $KUBECONFIG
 sh -c "kubectl version"
 echo "view content of kubectl config"
 sh -c "cat /tmp/config"
